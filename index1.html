@@ -1,0 +1,65 @@
+<!-- Задача 2.
+Да се симулира форма за регистрација на корисници. Формата треба да ги содржи следниве инпут полиња:
+
+First name
+Last name
+Email
+Password
+Confirm password -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index1.css">
+</head>
+<body>
+    <h1>Hello, please complete this user registration!</h1>
+    <div id="info">
+        <form id="registration-form">
+        <label for="first-name">First name</label>
+        <input type="text" id="first-name" required>
+        <br><br>
+        <label for="last-name">Last name</label>
+        <input type="text" id="last-name" required>
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+        <br><br>
+        <label for="confirm-password">Confirm password</label>
+        <input type="password" id="confirm-password" required>
+        <br><br><br><br>
+        <button type="submit" id="submit">Register</button>
+    </form>
+    </div>
+
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const firstName = document.getElementById("first-name").value
+            const lastName = document.getElementById("last-name").value
+            const emailAdress = document.getElementById("email").value
+            const password = document.getElementById("password").value
+            const confirmPassword = document.getElementById("confirm-password").value
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match! Please try again!")
+                return;
+            }
+
+
+            alert(`Registration Successful!\n\nName: ${firstName} ${lastName}\nEmail: ${email}`);
+        })
+
+
+
+    </script>
+</body>
+
+</html>
